@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seeded Geometries — Token</title>
+<style>
+  html, body {
+    height: 100%; margin: 0; padding: 0; background: #0e1016;
+    display: flex; align-items: center; justify-content: center; overflow: hidden;
+  }
+  canvas { width: 100vmin; height: 100vmin; display: block; }
+</style>
+</head>
+<body>
+<canvas id="stage"></canvas>
+<script>/*__SEED_JS__*/</script>
+<script>/*__TRAITS_JS__*/</script>
+<script>/*__LAYERS_JS__*/</script>
+<script>/*__ARTWORK_JS__*/</script>
+<script>
+/*__TOKEN_LAYERS__*/
+(function () {
+  "use strict";
+  var LOOP_MS = 8000; // one seamless loop
+
+  // Hash resolution: Art Blocks injects `tokenData` (tokenId + hash) ahead of
+  // the project script; `?hash=` overrides for preview/testing; otherwise a
+  // deterministic fallback so the page never renders blank.
+  function tokenHash() {
+    try {
+      if (typeof tokenData !== "undefined" && tokenData && tokenData.hash) {
+        var h = String(tokenData.hash).replace(/^0x/, "").toLowerCase();
+        if (/^[0-9a-f]{64}$/.test(h)) return h;
+      }
+    } catch (e) {}
+    try {
+      var m = /[?&]hash=([0-9a-fA-Fx]+)/.exec(location.search || "");
+      if (m) {
+        var h2 = m[1].replace(/^0x/, "").toLowerCase();
+        if (/^[0-9a-f]{64}$/.test(h2)) return h2;
+      }
+    } catch (e) {}
+    return SeedKit.demoMintHash(13);
+  }
+
+  var HASH = tokenHash();
+  var canvas = document.getElementById("stage");
+  var SIZE = 720;
+
+  function fit() {
+    SIZE = Math.max(320, Math.min(window.innerWidth, window.innerHeight));
+    canvas.width = SIZE;
+    canvas.height = SIZE;
+  }
+
+  // Build live decks from the inlined PNG data URIs (single-file: no network).
+  function buildDecks() {
+    var decks = {};
+    Object.keys(TOKEN_LAYERS).forEach(function (key) {
+      decks[key] = [];
+      TOKEN_LAYERS[key].forEach(function (e) {
+        if (e.dynamic) { decks[key].push({ img: null, cfg: e.cfg }); return; }
+        var img = new Image();
+        img.src = e.data;
+        decks[key].push({ img: img, cfg: e.cfg });
+      });
+    });
+    return decks;
+  }
+
+  function imagesReady(decks) {
+    var ps = [];
+    Object.keys(decks).forEach(function (k) {
+      decks[k].forEach(function (entry) {
+        if (!entry.img) return;
+        ps.push(new Promise(function (res) {
+          if (entry.img.complete && entry.img.naturalWidth) return res();
+          entry.img.onload = res;
+          entry.img.onerror = res; // a bad layer never kills the token
+        }));
+      });
+    });
+    return Promise.all(ps);
+  }
+
+  var t0 = null;
+  // Pass the whole deck collection: SGArt.render() picks layers[sys] per
+  // grid system internally (the grid trait is a composite like "fusion",
+  // which is not itself a deck key).
+  var deck = decks;
+  function frame(now) {
+    if (t0 === null) t0 = now;
+    var phase = (((now - t0) / LOOP_MS) % 1 + 1) % 1;
+    SGArt.render(canvas.getContext("2d"), SIZE, HASH, deck, phase);
+    requestAnimationFrame(frame);
+  }
+
+  fit();
+  if (window.addEventListener) {
+    window.addEventListener("resize", function () { fit(); });
+  }
+  var decks = buildDecks();
+  deck = decks; // full collection; SGArt.render() selects per grid system
+  imagesReady(decks).then(function () { requestAnimationFrame(frame); });
+})();
+</script>
+</body>
+</html>

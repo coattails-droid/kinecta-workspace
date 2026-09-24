@@ -1,0 +1,877 @@
+[
+  {
+    "tokenId": 1,
+    "hash": "206b3ac07756098c8ae669026a5dd3ddc54241cc4704137d864ee6058e77668a",
+    "traits": {
+      "grid": "fusion",
+      "palette": "ink",
+      "density": "sparse",
+      "accent": "bold",
+      "hues": [
+        "magenta",
+        "ink"
+      ]
+    },
+    "features": [
+      {
+        "trait_type": "Grid System",
+        "value": "Linear Grid ⊕ Triangle Field"
+      },
+      {
+        "trait_type": "Palette",
+        "value": "Ink / Bone"
+      },
+      {
+        "trait_type": "Density",
+        "value": "Sparse"
+      },
+      {
+        "trait_type": "Accent",
+        "value": "Bold"
+      },
+      {
+        "trait_type": "Accent Hues",
+        "value": "Magenta + Ink"
+      }
+    ],
+    "rarity": 33.33333333333333
+  },
+  {
+    "tokenId": 13,
+    "hash": "4bfaf4e6d08331e5d8a46ad81a001d7afb9cb23940f3fb21cae570cdffedc226",
+    "traits": {
+      "grid": "fusion",
+      "palette": "ink",
+      "density": "dense",
+      "accent": "bold",
+      "hues": [
+        "turquoise",
+        "gold"
+      ]
+    },
+    "features": [
+      {
+        "trait_type": "Grid System",
+        "value": "Linear Grid ⊕ Triangle Field"
+      },
+      {
+        "trait_type": "Palette",
+        "value": "Ink / Bone"
+      },
+      {
+        "trait_type": "Density",
+        "value": "Dense"
+      },
+      {
+        "trait_type": "Accent",
+        "value": "Bold"
+      },
+      {
+        "trait_type": "Accent Hues",
+        "value": "Turquoise + Gold"
+      }
+    ],
+    "rarity": 32
+  },
+  {
+    "tokenId": 14,
+    "hash": "2b5e95ca7a1b2cf8acadf9d7f29e77a3f9bf5135d524f551b27d4bcff471671c",
+    "traits": {
+      "grid": "fusion",
+      "palette": "ink",
+      "density": "standard",
+      "accent": "bold",
+      "hues": [
+        "magenta",
+        "turquoise"
+      ]
+    },
+    "features": [
+      {
+        "trait_type": "Grid System",
+        "value": "Linear Grid ⊕ Triangle Field"
+      },
+      {
+        "trait_type": "Palette",
+        "value": "Ink / Bone"
+      },
+      {
+        "trait_type": "Density",
+        "value": "Standard"
+      },
+      {
+        "trait_type": "Accent",
+        "value": "Bold"
+      },
+      {
+        "trait_type": "Accent Hues",
+        "value": "Magenta + Turquoise"
+      }
+    ],
+    "rarity": 32
+  },
+  {
+    "tokenId": 16,
+    "hash": "6c36b1d61f550c4ef49e5106ae83c7f95f5fbe533a607009a9264887041af750",
+    "traits": {
+      "grid": "fusion",
+      "palette": "ink",
+      "density": "standard",
+      "accent": "bold",
+      "hues": [
+        "ink",
+        "turquoise",
+        "gold"
+      ]
+    },
+    "features": [
+      {
+        "trait_type": "Grid System",
+        "value": "Linear Grid ⊕ Triangle Field"
+      },
+      {
+        "trait_type": "Palette",
+        "value": "Ink / Bone"
+      },
+      {
+        "trait_type": "Density",
+        "value": "Standard"
+      },
+      {
+        "trait_type": "Accent",
+        "value": "Bold"
+      },
+      {
+        "trait_type": "Accent Hues",
+        "value": "Ink + Turquoise + Gold"
+      }
+    ],
+    "rarity": 32
+  },
+  {
+    "tokenId": 6,
+    "hash": "6d7d77a6b3e893bd5b8a99b81a8eb652804ff28bfa105108969b70d465f84e27",
+    "traits": {
+      "grid": "fusion",
+      "palette": "ink",
+      "density": "standard",
+      "accent": "restrained",
+      "hues": [
+        "gold"
+      ]
+    },
+    "features": [
+      {
+        "trait_type": "Grid System",
+        "value": "Linear Grid ⊕ Triangle Field"
+      },
+      {
+        "trait_type": "Palette",
+        "value": "Ink / Bone"
+      },
+      {
+        "trait_type": "Density",
+        "value": "Standard"
+      },
+      {
+        "trait_type": "Accent",
+        "value": "Restrained"
+      },
+      {
+        "trait_type": "Accent Hues",
+        "value": "Gold"
+      }
+    ],
+    "rarity": 31.4
+  },
+  {
+    "tokenId": 15,
+    "hash": "bcb258d411c5943a6a800d157e25fc9ccc6c0e7fd6c3b0b026fce00a2b85def3",
+    "traits": {
+      "grid": "fusion-inv",
+      "palette": "ink",
+      "density": "standard",
+      "accent": "bold",
+      "hues": [
+        "ink",
+        "turquoise"
+      ]
+    },
+    "features": [
+      {
+        "trait_type": "Grid System",
+        "value": "Triangle Field ⊕ Linear Grid"
+      },
+      {
+        "trait_type": "Palette",
+        "value": "Ink / Bone"
+      },
+      {
+        "trait_type": "Density",
+        "value": "Standard"
+      },
+      {
+        "trait_type": "Accent",
+        "value": "Bold"
+      },
+      {
+        "trait_type": "Accent Hues",
+        "value": "Ink + Turquoise"
+      }
+    ],
+    "rarity": 22.666666666666664
+  },
+  {
+    "tokenId": 9,
+    "hash": "08a6feeb08613ca5edd2e629158be955b7b7770234e7e1d0da149038ba465533",
+    "traits": {
+      "grid": "fusion",
+      "palette": "ink",
+      "density": "dense",
+      "accent": "bold",
+      "hues": [
+        "ink",
+        "turquoise"
+      ]
+    },
+    "features": [
+      {
+        "trait_type": "Grid System",
+        "value": "Linear Grid ⊕ Triangle Field"
+      },
+      {
+        "trait_type": "Palette",
+        "value": "Ink / Bone"
+      },
+      {
+        "trait_type": "Density",
+        "value": "Dense"
+      },
+      {
+        "trait_type": "Accent",
+        "value": "Bold"
+      },
+      {
+        "trait_type": "Accent Hues",
+        "value": "Ink + Turquoise"
+      }
+    ],
+    "rarity": 20
+  },
+  {
+    "tokenId": 10,
+    "hash": "5d09fcefdc09ff8a48bf3886084a35f46c1338869e041a407ef5c24066b12510",
+    "traits": {
+      "grid": "fusion",
+      "palette": "ink",
+      "density": "dense",
+      "accent": "bold",
+      "hues": [
+        "turquoise",
+        "gold",
+        "magenta"
+      ]
+    },
+    "features": [
+      {
+        "trait_type": "Grid System",
+        "value": "Linear Grid ⊕ Triangle Field"
+      },
+      {
+        "trait_type": "Palette",
+        "value": "Ink / Bone"
+      },
+      {
+        "trait_type": "Density",
+        "value": "Dense"
+      },
+      {
+        "trait_type": "Accent",
+        "value": "Bold"
+      },
+      {
+        "trait_type": "Accent Hues",
+        "value": "Turquoise + Gold + Magenta"
+      }
+    ],
+    "rarity": 20
+  },
+  {
+    "tokenId": 12,
+    "hash": "78dfc2c56c508cd983e038984b2fcdc7ebb73ee61283567786080f9b61b68e63",
+    "traits": {
+      "grid": "fusion",
+      "palette": "ink",
+      "density": "dense",
+      "accent": "bold",
+      "hues": [
+        "magenta",
+        "turquoise",
+        "gold"
+      ]
+    },
+    "features": [
+      {
+        "trait_type": "Grid System",
+        "value": "Linear Grid ⊕ Triangle Field"
+      },
+      {
+        "trait_type": "Palette",
+        "value": "Ink / Bone"
+      },
+      {
+        "trait_type": "Density",
+        "value": "Dense"
+      },
+      {
+        "trait_type": "Accent",
+        "value": "Bold"
+      },
+      {
+        "trait_type": "Accent Hues",
+        "value": "Magenta + Turquoise + Gold"
+      }
+    ],
+    "rarity": 20
+  },
+  {
+    "tokenId": 2,
+    "hash": "a79da58ff7fcf6da97e775d6bce1e1965f07c18e18ecf9d73a10b7cffbc5d0ca",
+    "traits": {
+      "grid": "fusion",
+      "palette": "ink",
+      "density": "standard",
+      "accent": "restrained",
+      "hues": [
+        "turquoise"
+      ]
+    },
+    "features": [
+      {
+        "trait_type": "Grid System",
+        "value": "Linear Grid ⊕ Triangle Field"
+      },
+      {
+        "trait_type": "Palette",
+        "value": "Ink / Bone"
+      },
+      {
+        "trait_type": "Density",
+        "value": "Standard"
+      },
+      {
+        "trait_type": "Accent",
+        "value": "Restrained"
+      },
+      {
+        "trait_type": "Accent Hues",
+        "value": "Turquoise"
+      }
+    ],
+    "rarity": 19.4
+  },
+  {
+    "tokenId": 17,
+    "hash": "15c461bffcfaf3f669e921e5c20f3e5d9ad5ca82e71f0e729364633de90b9d89",
+    "traits": {
+      "grid": "fusion",
+      "palette": "ink",
+      "density": "standard",
+      "accent": "restrained",
+      "hues": [
+        "turquoise"
+      ]
+    },
+    "features": [
+      {
+        "trait_type": "Grid System",
+        "value": "Linear Grid ⊕ Triangle Field"
+      },
+      {
+        "trait_type": "Palette",
+        "value": "Ink / Bone"
+      },
+      {
+        "trait_type": "Density",
+        "value": "Standard"
+      },
+      {
+        "trait_type": "Accent",
+        "value": "Restrained"
+      },
+      {
+        "trait_type": "Accent Hues",
+        "value": "Turquoise"
+      }
+    ],
+    "rarity": 19.4
+  },
+  {
+    "tokenId": 19,
+    "hash": "7a1337a997c2eba37e5b65ffc9fadb30b72c4b8968e943bdbce5dc3c5f4af138",
+    "traits": {
+      "grid": "fusion",
+      "palette": "ink",
+      "density": "sparse",
+      "accent": "restrained",
+      "hues": [
+        "magenta"
+      ]
+    },
+    "features": [
+      {
+        "trait_type": "Grid System",
+        "value": "Linear Grid ⊕ Triangle Field"
+      },
+      {
+        "trait_type": "Palette",
+        "value": "Ink / Bone"
+      },
+      {
+        "trait_type": "Density",
+        "value": "Sparse"
+      },
+      {
+        "trait_type": "Accent",
+        "value": "Restrained"
+      },
+      {
+        "trait_type": "Accent Hues",
+        "value": "Magenta"
+      }
+    ],
+    "rarity": 16.733333333333334
+  },
+  {
+    "tokenId": 0,
+    "hash": "bd3a1305ed09b44283c0b98da8dad45b0a9fc1e72adb2a76e1e090f45d911a51",
+    "traits": {
+      "grid": "fusion-inv",
+      "palette": "ink",
+      "density": "sparse",
+      "accent": "classic",
+      "hues": [
+        "ink"
+      ]
+    },
+    "features": [
+      {
+        "trait_type": "Grid System",
+        "value": "Triangle Field ⊕ Linear Grid"
+      },
+      {
+        "trait_type": "Palette",
+        "value": "Ink / Bone"
+      },
+      {
+        "trait_type": "Density",
+        "value": "Sparse"
+      },
+      {
+        "trait_type": "Accent",
+        "value": "Classic"
+      },
+      {
+        "trait_type": "Accent Hues",
+        "value": "Ink"
+      }
+    ],
+    "rarity": 15.4
+  },
+  {
+    "tokenId": 7,
+    "hash": "7c25f94f72df0ccc35840ba329d7fe14a08ee7cc41ba37fd93571e5a58efc5fb",
+    "traits": {
+      "grid": "fusion",
+      "palette": "ink",
+      "density": "dense",
+      "accent": "restrained",
+      "hues": [
+        "magenta"
+      ]
+    },
+    "features": [
+      {
+        "trait_type": "Grid System",
+        "value": "Linear Grid ⊕ Triangle Field"
+      },
+      {
+        "trait_type": "Palette",
+        "value": "Ink / Bone"
+      },
+      {
+        "trait_type": "Density",
+        "value": "Dense"
+      },
+      {
+        "trait_type": "Accent",
+        "value": "Restrained"
+      },
+      {
+        "trait_type": "Accent Hues",
+        "value": "Magenta"
+      }
+    ],
+    "rarity": 15.4
+  },
+  {
+    "tokenId": 21,
+    "hash": "148a7cad6ad4042acb0cb25b897fc7cad3b19770025f7753ba7f7dd66d272a6c",
+    "traits": {
+      "grid": "fusion",
+      "palette": "ink",
+      "density": "standard",
+      "accent": "restrained",
+      "hues": [
+        "magenta"
+      ]
+    },
+    "features": [
+      {
+        "trait_type": "Grid System",
+        "value": "Linear Grid ⊕ Triangle Field"
+      },
+      {
+        "trait_type": "Palette",
+        "value": "Ink / Bone"
+      },
+      {
+        "trait_type": "Density",
+        "value": "Standard"
+      },
+      {
+        "trait_type": "Accent",
+        "value": "Restrained"
+      },
+      {
+        "trait_type": "Accent Hues",
+        "value": "Magenta"
+      }
+    ],
+    "rarity": 15.4
+  },
+  {
+    "tokenId": 23,
+    "hash": "d3e59015771f2571ddc50392947de401bbac78eaf0e7e2206c97d5e945a64c4e",
+    "traits": {
+      "grid": "fusion-inv",
+      "palette": "ink",
+      "density": "standard",
+      "accent": "classic",
+      "hues": [
+        "ink"
+      ]
+    },
+    "features": [
+      {
+        "trait_type": "Grid System",
+        "value": "Triangle Field ⊕ Linear Grid"
+      },
+      {
+        "trait_type": "Palette",
+        "value": "Ink / Bone"
+      },
+      {
+        "trait_type": "Density",
+        "value": "Standard"
+      },
+      {
+        "trait_type": "Accent",
+        "value": "Classic"
+      },
+      {
+        "trait_type": "Accent Hues",
+        "value": "Ink"
+      }
+    ],
+    "rarity": 14.066666666666666
+  },
+  {
+    "tokenId": 22,
+    "hash": "bde00f6812fce73358f097a2b98309484a7994d7246c5fbbec821ed9a5bcc9d7",
+    "traits": {
+      "grid": "fusion-inv",
+      "palette": "ink",
+      "density": "sparse",
+      "accent": "restrained",
+      "hues": [
+        "ink"
+      ]
+    },
+    "features": [
+      {
+        "trait_type": "Grid System",
+        "value": "Triangle Field ⊕ Linear Grid"
+      },
+      {
+        "trait_type": "Palette",
+        "value": "Ink / Bone"
+      },
+      {
+        "trait_type": "Density",
+        "value": "Sparse"
+      },
+      {
+        "trait_type": "Accent",
+        "value": "Restrained"
+      },
+      {
+        "trait_type": "Accent Hues",
+        "value": "Ink"
+      }
+    ],
+    "rarity": 13.8
+  },
+  {
+    "tokenId": 4,
+    "hash": "83a9240844b169188215af19f2291ebbde3bca709c1a367128da77c323ede885",
+    "traits": {
+      "grid": "fusion",
+      "palette": "ink",
+      "density": "sparse",
+      "accent": "classic",
+      "hues": [
+        "ink"
+      ]
+    },
+    "features": [
+      {
+        "trait_type": "Grid System",
+        "value": "Linear Grid ⊕ Triangle Field"
+      },
+      {
+        "trait_type": "Palette",
+        "value": "Ink / Bone"
+      },
+      {
+        "trait_type": "Density",
+        "value": "Sparse"
+      },
+      {
+        "trait_type": "Accent",
+        "value": "Classic"
+      },
+      {
+        "trait_type": "Accent Hues",
+        "value": "Ink"
+      }
+    ],
+    "rarity": 12.733333333333333
+  },
+  {
+    "tokenId": 18,
+    "hash": "9b020337c45da2295bf97dfaf3484c05555ddd8a83cfa468ca009ad71274f55a",
+    "traits": {
+      "grid": "fusion",
+      "palette": "ink",
+      "density": "sparse",
+      "accent": "classic",
+      "hues": [
+        "ink"
+      ]
+    },
+    "features": [
+      {
+        "trait_type": "Grid System",
+        "value": "Linear Grid ⊕ Triangle Field"
+      },
+      {
+        "trait_type": "Palette",
+        "value": "Ink / Bone"
+      },
+      {
+        "trait_type": "Density",
+        "value": "Sparse"
+      },
+      {
+        "trait_type": "Accent",
+        "value": "Classic"
+      },
+      {
+        "trait_type": "Accent Hues",
+        "value": "Ink"
+      }
+    ],
+    "rarity": 12.733333333333333
+  },
+  {
+    "tokenId": 3,
+    "hash": "cd78ca6b07118247550ff41ae213ca148e64129ab4dc775e27dbf979badd05e7",
+    "traits": {
+      "grid": "fusion-inv",
+      "palette": "ink",
+      "density": "dense",
+      "accent": "restrained",
+      "hues": [
+        "ink"
+      ]
+    },
+    "features": [
+      {
+        "trait_type": "Grid System",
+        "value": "Triangle Field ⊕ Linear Grid"
+      },
+      {
+        "trait_type": "Palette",
+        "value": "Ink / Bone"
+      },
+      {
+        "trait_type": "Density",
+        "value": "Dense"
+      },
+      {
+        "trait_type": "Accent",
+        "value": "Restrained"
+      },
+      {
+        "trait_type": "Accent Hues",
+        "value": "Ink"
+      }
+    ],
+    "rarity": 12.466666666666667
+  },
+  {
+    "tokenId": 20,
+    "hash": "f99bee6736c7ea61a251bc927176dd4c9e4f53fe515ec93c4d156b4dbc799fe3",
+    "traits": {
+      "grid": "fusion-inv",
+      "palette": "ink",
+      "density": "dense",
+      "accent": "restrained",
+      "hues": [
+        "ink"
+      ]
+    },
+    "features": [
+      {
+        "trait_type": "Grid System",
+        "value": "Triangle Field ⊕ Linear Grid"
+      },
+      {
+        "trait_type": "Palette",
+        "value": "Ink / Bone"
+      },
+      {
+        "trait_type": "Density",
+        "value": "Dense"
+      },
+      {
+        "trait_type": "Accent",
+        "value": "Restrained"
+      },
+      {
+        "trait_type": "Accent Hues",
+        "value": "Ink"
+      }
+    ],
+    "rarity": 12.466666666666667
+  },
+  {
+    "tokenId": 5,
+    "hash": "14e38c15816744ed558cc9be127ec26b327341120ee22f18df5050e0d53905a2",
+    "traits": {
+      "grid": "fusion",
+      "palette": "ink",
+      "density": "standard",
+      "accent": "classic",
+      "hues": [
+        "ink"
+      ]
+    },
+    "features": [
+      {
+        "trait_type": "Grid System",
+        "value": "Linear Grid ⊕ Triangle Field"
+      },
+      {
+        "trait_type": "Palette",
+        "value": "Ink / Bone"
+      },
+      {
+        "trait_type": "Density",
+        "value": "Standard"
+      },
+      {
+        "trait_type": "Accent",
+        "value": "Classic"
+      },
+      {
+        "trait_type": "Accent Hues",
+        "value": "Ink"
+      }
+    ],
+    "rarity": 11.4
+  },
+  {
+    "tokenId": 8,
+    "hash": "a060cf0eacdfd4f787c236eb0374ab1cc3c119451ee555be41fe1e2c4b3e1691",
+    "traits": {
+      "grid": "fusion",
+      "palette": "ink",
+      "density": "dense",
+      "accent": "classic",
+      "hues": [
+        "ink"
+      ]
+    },
+    "features": [
+      {
+        "trait_type": "Grid System",
+        "value": "Linear Grid ⊕ Triangle Field"
+      },
+      {
+        "trait_type": "Palette",
+        "value": "Ink / Bone"
+      },
+      {
+        "trait_type": "Density",
+        "value": "Dense"
+      },
+      {
+        "trait_type": "Accent",
+        "value": "Classic"
+      },
+      {
+        "trait_type": "Accent Hues",
+        "value": "Ink"
+      }
+    ],
+    "rarity": 11.4
+  },
+  {
+    "tokenId": 11,
+    "hash": "a356ca74309c7515c043828dabfe0dc6641c25437ec0f3ad9a5f9ef838ed3ab8",
+    "traits": {
+      "grid": "fusion",
+      "palette": "ink",
+      "density": "dense",
+      "accent": "restrained",
+      "hues": [
+        "ink"
+      ]
+    },
+    "features": [
+      {
+        "trait_type": "Grid System",
+        "value": "Linear Grid ⊕ Triangle Field"
+      },
+      {
+        "trait_type": "Palette",
+        "value": "Ink / Bone"
+      },
+      {
+        "trait_type": "Density",
+        "value": "Dense"
+      },
+      {
+        "trait_type": "Accent",
+        "value": "Restrained"
+      },
+      {
+        "trait_type": "Accent Hues",
+        "value": "Ink"
+      }
+    ],
+    "rarity": 9.8
+  }
+]

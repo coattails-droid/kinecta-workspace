@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seeded Geometries — hash-driven generative prototype</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 32px 20px 64px;
+    background: #101114; color: #e8e4d8;
+    font-family: Georgia, "Times New Roman", serif;
+  }
+  header { max-width: 1100px; margin: 0 auto 8px; }
+  h1 { font-size: 28px; margin: 0 0 6px; letter-spacing: 0.5px; }
+  header p { color: #9a958a; max-width: 70ch; line-height: 1.5; margin: 6px 0; }
+  header code, figcaption code { color: #c9a227; font-size: 12px; }
+  .controls { max-width: 1100px; margin: 20px auto; display: flex; gap: 16px; align-items: center; }
+  button {
+    font-family: inherit; font-size: 15px; cursor: pointer;
+    background: #c9a227; color: #101114; border: none; border-radius: 4px;
+    padding: 10px 22px;
+  }
+  button:hover { background: #dbb845; }
+  .note { color: #9a958a; font-size: 13px; margin: 0; }
+  .gallery {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 28px;
+  }
+  figure { margin: 0; }
+  canvas { width: 100%; height: auto; display: block; border-radius: 2px; }
+  figcaption { font-size: 13px; color: #b9b3a4; line-height: 1.65; margin-top: 10px; }
+  figcaption strong { color: #e8e4d8; }
+  figcaption .rarity { color: #c9a227; }
+  figcaption .tokenlink { color: #7d9bd1; }
+  .dropzone {
+    border: 1px dashed #5a554a; border-radius: 4px; padding: 14px 18px;
+    color: #9a958a; font-size: 14px; cursor: pointer; flex: 1;
+  }
+  .dropzone.over { border-color: #c9a227; color: #e8e4d8; }
+  .dropzone .dz-alt { color: #6f6a5e; }
+  .linklike {
+    background: none; border: none; padding: 0; color: #c9a227;
+    font-family: inherit; font-size: inherit; cursor: pointer; text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Seeded Geometries</h1>
+  <p>
+    A prototype of hash-driven generative art. Each piece is rendered from a single
+    64-character token hash: fixed slices of the hash choose the coarse traits
+    (grid system, palette, density, accent), while domain-separated sub-seeds feed
+    independent random streams for all micro-detail. Same hash &rarr; same piece,
+    forever, anywhere. No two mints share a seed.
+  </p>
+  <p>
+    <code>js/seed.js</code> holds the seed architecture,
+    <code>js/traits.js</code> the trait / rarity logic,
+    <code>js/artwork.js</code> the fused geometric system (triangle field under linear grid).
+  </p>
+</header>
+<div class="controls">
+  <button id="mint">Simulate mint</button>
+  <button id="animate">Animate</button>
+  <p class="note">Demo hashes are deterministic stand-ins. A production deployment
+  derives the token hash from the mint blockhash instead. Animation loops seamlessly:
+  every motion is periodic in the loop phase, so the last frame flows into the first.</p>
+</div>
+<div class="controls">
+  <div id="dropzone" class="dropzone">
+    Drop your own PNG layers here to preview them on every piece
+    <input type="file" id="filepick" accept="image/png" multiple hidden>
+    <span class="dz-alt">or <button id="browse" type="button" class="linklike">browse files</button></span>
+  </div>
+  <p class="note" id="dz-note" hidden></p>
+  <button id="restore-layers" type="button" hidden>Restore built-in layers</button>
+</div>
+<div id="gallery" class="gallery"></div>
+<script src="js/seed.js"></script>
+<script src="js/traits.js"></script>
+<script src="js/layers.js"></script>
+<script src="js/artwork.js"></script>
+<script>
+(function () {
+  "use strict";
+  var SIZE = 720;
+  var POP = 48; // reference population for rarity scoring
+  var population = [];
+  for (var i = 0; i < POP; i++) {
+    population.push(SGTraits.deriveTraits(SeedKit.demoMintHash(i)));
+  }
+  var minted = 0;
+  var pieces = []; // { canvas, hash, index } for the animation loop
+  var builtinLayers = null;  // decks from assets/layers/
+  var previewLayers = null;  // decks from dropped PNGs (preview only)
+  function activeLayers() { return previewLayers || builtinLayers; }
+
+  var gallery = document.getElementById("gallery");
+
+  function addPiece(i) {
+    var hash = SeedKit.demoMintHash(i);
+    var feats = SGTraits.features(hash);
+    var score = SGTraits.scoreRarity(population, SGTraits.deriveTraits(hash));
+
+    var card = document.createElement("figure");
+    var canvas = document.createElement("canvas");
+    canvas.width = SIZE;
+    canvas.height = SIZE;
+    SGArt.render(canvas.getContext("2d"), SIZE, hash, activeLayers(), 0);
+    pieces.push({ canvas: canvas, hash: hash, index: i });
+
+    var cap = document.createElement("figcaption");
+    var html = "<strong>Token #" + i + "</strong> <code>" + hash.slice(0, 10) + "&hellip;</code><br>";
+    feats.forEach(function (f) { html += f.trait_type + ": " + f.value + "<br>"; });
+    html += '<span class="rarity">Rarity score: ' + score.toFixed(2) + "</span><br>";
+    html += '<a class="tokenlink" href="token.html?hash=' + hash + '">open live token &rarr;</a>';
+    cap.innerHTML = html;
+
+    card.appendChild(canvas);
+    card.appendChild(cap);
+    gallery.appendChild(card);
+  }
+
+  function renderAll(count) {
+    gallery.innerHTML = "";
+    minted = 0;
+    pieces = [];
+    // Progressive: one piece per frame so the ~0.3s welded-graph build per
+    // piece never blocks the wall — it fills in over a couple of seconds.
+    var i = 0;
+    (function step() {
+      if (playing || i >= count) return; // animation took over; stop feeding
+      addPiece(minted++);
+      i++;
+      requestAnimationFrame(step);
+    })();
+  }
+
+  // --- Seamless-loop animation ---------------------------------------------
+  var LOOP_MS = 8000; // one full loop per piece
+  var playing = false;
+  var animBtn = document.getElementById("animate");
+  function tick(now) {
+    if (!playing) return;
+    for (var p = 0; p < pieces.length; p++) {
+      var pc = pieces[p];
+      // golden-ratio offset per piece so the wall doesn't pulse in lockstep;
+      // each piece still loops seamlessly on its own phase.
+      var phase = (((now / LOOP_MS) + pc.index * 0.6180339887) % 1 + 1) % 1;
+      SGArt.render(pc.canvas.getContext("2d"), SIZE, pc.hash, activeLayers(), phase);
+    }
+    requestAnimationFrame(tick);
+  }
+  animBtn.addEventListener("click", function () {
+    playing = !playing;
+    animBtn.textContent = playing ? "Pause" : "Animate";
+    if (playing) requestAnimationFrame(tick);
+    else renderAll(Math.max(minted, 12)); // freeze back on the static frame
+  });
+
+  // Boot: preload PNG decks, then render. A missing PNG never kills the page.
+  var bootNote = document.createElement("p");
+  bootNote.className = "note";
+  bootNote.textContent = "Loading texture layers…";
+  gallery.appendChild(bootNote);
+  SGLayers.loadLayers().then(function (decks) {
+    builtinLayers = decks;
+    renderAll(12);
+  });
+
+  document.getElementById("mint").addEventListener("click", function () { addPiece(minted++); });
+
+  // --- Custom PNG preview --------------------------------------------------
+  var DEFAULT_PREVIEW_CFG = { blend: "multiply", alpha: [0.10, 0.22], scale: [0.9, 1.4], count: [2, 4], rotate: 0 };
+  var dz = document.getElementById("dropzone");
+  var dzNote = document.getElementById("dz-note");
+  var restoreBtn = document.getElementById("restore-layers");
+
+  function previewFiles(files) {
+    var pngs = Array.prototype.filter.call(files, function (f) { return /png$/i.test(f.type) || /\.png$/i.test(f.name); });
+    if (!pngs.length) return;
+    var loaded = [];
+    var pending = pngs.length;
+    pngs.forEach(function (f) {
+      var url = URL.createObjectURL(f);
+      var img = new Image();
+      img.onload = function () {
+        loaded.push({ img: img, cfg: Object.assign({ file: f.name }, DEFAULT_PREVIEW_CFG) });
+        if (--pending === 0) installPreview(loaded);
+      };
+      img.onerror = function () { URL.revokeObjectURL(url); if (--pending === 0) installPreview(loaded); };
+      img.src = url;
+    });
+  }
+
+  function installPreview(entries) {
+    if (!entries.length) return;
+    // One preview deck per grid system, so every system shows your PNGs.
+    previewLayers = {};
+    Object.keys(SGLayers.LAYER_DECKS).forEach(function (key) { previewLayers[key] = entries; });
+    dzNote.hidden = false;
+    dzNote.textContent = "Previewing " + entries.length + " custom layer" + (entries.length > 1 ? "s" : "") +
+      " on every piece. To keep them, commit the PNGs to assets/layers/<system>/ and add entries to js/layers.js.";
+    restoreBtn.hidden = false;
+    renderAll(Math.max(minted, 12));
+  }
+
+  restoreBtn.addEventListener("click", function () {
+    previewLayers = null;
+    dzNote.hidden = true;
+    restoreBtn.hidden = true;
+    renderAll(Math.max(minted, 12));
+  });
+
+  dz.addEventListener("click", function (e) {
+    if (e.target.id !== "browse") document.getElementById("filepick").click();
+  });
+  document.getElementById("browse").addEventListener("click", function (e) {
+    e.stopPropagation();
+    document.getElementById("filepick").click();
+  });
+  document.getElementById("filepick").addEventListener("change", function (e) { previewFiles(e.target.files); });
+  ["dragenter", "dragover"].forEach(function (ev) {
+    dz.addEventListener(ev, function (e) { e.preventDefault(); dz.classList.add("over"); });
+  });
+  ["dragleave", "drop"].forEach(function (ev) {
+    dz.addEventListener(ev, function (e) { e.preventDefault(); dz.classList.remove("over"); });
+  });
+  dz.addEventListener("drop", function (e) { previewFiles(e.dataTransfer.files); });
+})();
+</script>
+</body>
+</html>
