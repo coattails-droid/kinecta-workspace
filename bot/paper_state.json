@@ -1,0 +1,1439 @@
+{
+  "balance": 50.0,
+  "positions": {},
+  "trade_history": [
+    {
+      "at": "2026-09-18T12:40:21.980523+00:00",
+      "prices": {
+        "bitcoin": 78045,
+        "ethereum": 2504.52,
+        "solana": 105.87
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$78,045.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,504.52 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "solana",
+          "side": "hold",
+          "reason": "price=$105.87 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-18T12:44:06.155999+00:00",
+      "prices": {
+        "bitcoin": 78062,
+        "ethereum": 2504.61,
+        "ripple": 1.32,
+        "bitcoin-cash": 249.91,
+        "kaspa": 0.03585875
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$78,062.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,504.61 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.32 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$249.91 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-18T16:11:44.566634+00:00",
+      "prices": {
+        "bitcoin": 80760,
+        "ethereum": 2589.82,
+        "ripple": 1.38,
+        "bitcoin-cash": 252.38,
+        "kaspa": 0.03659001
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$80,760.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,589.82 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.38 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$252.38 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-18T20:11:46.869926+00:00",
+      "prices": {
+        "bitcoin": 80980,
+        "ethereum": 2629.55,
+        "ripple": 1.41,
+        "bitcoin-cash": 253.8,
+        "kaspa": 0.03699393
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$80,980.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,629.55 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.41 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$253.80 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-19T00:15:59.831615+00:00",
+      "prices": {
+        "bitcoin": 80910,
+        "ethereum": 2609.96,
+        "ripple": 1.4,
+        "bitcoin-cash": 255.88,
+        "kaspa": 0.03819705
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$80,910.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,609.96 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.40 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$255.88 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-19T04:11:49.527415+00:00",
+      "prices": {
+        "bitcoin": 81154,
+        "ethereum": 2623.21,
+        "ripple": 1.42,
+        "bitcoin-cash": 249.02,
+        "kaspa": 0.03861886
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$81,154.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,623.21 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.42 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$249.02 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-19T08:12:20.847193+00:00",
+      "prices": {
+        "bitcoin": 81172,
+        "ethereum": 2631.02,
+        "ripple": 1.41,
+        "bitcoin-cash": 246.65,
+        "kaspa": 0.0378031
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$81,172.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,631.02 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.41 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$246.65 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-19T12:14:23.632083+00:00",
+      "prices": {
+        "bitcoin": 81319,
+        "ethereum": 2640.85,
+        "ripple": 1.43,
+        "bitcoin-cash": 251.2,
+        "kaspa": 0.03827852
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$81,319.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,640.85 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.43 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$251.20 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-19T16:11:26.861025+00:00",
+      "prices": {
+        "bitcoin": 81566,
+        "ethereum": 2640.5,
+        "ripple": 1.43,
+        "bitcoin-cash": 254.43,
+        "kaspa": 0.04042212
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$81,566.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,640.50 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.43 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$254.43 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-19T20:10:51.064420+00:00",
+      "prices": {
+        "bitcoin": 81390,
+        "ethereum": 2634.53,
+        "ripple": 1.43,
+        "bitcoin-cash": 255.23,
+        "kaspa": 0.03964707
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$81,390.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,634.53 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.43 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$255.23 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-20T00:16:43.866404+00:00",
+      "prices": {
+        "bitcoin": 81253,
+        "ethereum": 2628.34,
+        "ripple": 1.41,
+        "bitcoin-cash": 254.48,
+        "kaspa": 0.03933659
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$81,253.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,628.34 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.41 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$254.48 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-20T04:11:41.217175+00:00",
+      "prices": {
+        "bitcoin": 80418,
+        "ethereum": 2584.54,
+        "ripple": 1.38,
+        "bitcoin-cash": 245.6,
+        "kaspa": 0.03817038
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$80,418.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,584.54 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.38 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$245.60 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-20T08:11:59.044278+00:00",
+      "prices": {
+        "bitcoin": 80401,
+        "ethereum": 2580.45,
+        "ripple": 1.38,
+        "bitcoin-cash": 247.15,
+        "kaspa": 0.03906203
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$80,401.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,580.45 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.38 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$247.15 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-20T12:14:30.720620+00:00",
+      "prices": {
+        "bitcoin": 80479,
+        "ethereum": 2580.87,
+        "ripple": 1.38,
+        "bitcoin-cash": 247.14,
+        "kaspa": 0.03855727
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$80,479.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,580.87 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.38 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$247.14 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-20T16:11:47.881988+00:00",
+      "prices": {
+        "bitcoin": 80960,
+        "ethereum": 2615.95,
+        "ripple": 1.4,
+        "bitcoin-cash": 249.3,
+        "kaspa": 0.03923794
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$80,960.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,615.95 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.40 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$249.30 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-20T20:10:45.137637+00:00",
+      "prices": {
+        "bitcoin": 81183,
+        "ethereum": 2633.79,
+        "ripple": 1.41,
+        "bitcoin-cash": 251.57,
+        "kaspa": 0.0392361
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$81,183.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,633.79 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.41 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$251.57 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-21T00:16:38.525864+00:00",
+      "prices": {
+        "bitcoin": 81622,
+        "ethereum": 2678.87,
+        "ripple": 1.42,
+        "bitcoin-cash": 255.68,
+        "kaspa": 0.03996216
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$81,622.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,678.87 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.42 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$255.68 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-21T04:11:49.312042+00:00",
+      "prices": {
+        "bitcoin": 81296,
+        "ethereum": 2659.11,
+        "ripple": 1.42,
+        "bitcoin-cash": 254.2,
+        "kaspa": 0.03980016
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$81,296.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,659.11 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.42 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$254.20 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-21T08:13:20.150169+00:00",
+      "prices": {
+        "bitcoin": 81923,
+        "ethereum": 2668.21,
+        "ripple": 1.45,
+        "bitcoin-cash": 255.69,
+        "kaspa": 0.03987375
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$81,923.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,668.21 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.45 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$255.69 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-21T12:14:11.152802+00:00",
+      "prices": {
+        "bitcoin": 85020,
+        "ethereum": 2723.88,
+        "ripple": 1.49,
+        "bitcoin-cash": 266.13,
+        "kaspa": 0.0411733
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$85,020.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,723.88 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.49 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$266.13 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-21T16:12:27.550604+00:00",
+      "prices": {
+        "bitcoin": 85791,
+        "ethereum": 2750.84,
+        "ripple": 1.5,
+        "bitcoin-cash": 264.02,
+        "kaspa": 0.0425469
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$85,791.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,750.84 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.50 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$264.02 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-21T20:11:26.800045+00:00",
+      "prices": {
+        "bitcoin": 86703,
+        "ethereum": 2769.89,
+        "ripple": 1.51,
+        "bitcoin-cash": 266.41,
+        "kaspa": 0.04492272
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$86,703.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,769.89 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.51 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$266.41 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-22T00:15:57.328130+00:00",
+      "prices": {
+        "bitcoin": 86429,
+        "ethereum": 2772.58,
+        "ripple": 1.53,
+        "bitcoin-cash": 267.56,
+        "kaspa": 0.04361251
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$86,429.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,772.58 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.53 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$267.56 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-22T04:11:47.941165+00:00",
+      "prices": {
+        "bitcoin": 85617,
+        "ethereum": 2737.39,
+        "ripple": 1.52,
+        "bitcoin-cash": 265.57,
+        "kaspa": 0.04317431
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$85,617.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,737.39 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.52 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$265.57 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-22T08:12:31.644989+00:00",
+      "prices": {
+        "bitcoin": 85465,
+        "ethereum": 2731.57,
+        "ripple": 1.52,
+        "bitcoin-cash": 268.38,
+        "kaspa": 0.04276749
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$85,465.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,731.57 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.52 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$268.38 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-22T12:14:58.692311+00:00",
+      "prices": {
+        "bitcoin": 85973,
+        "ethereum": 2744.93,
+        "ripple": 1.54,
+        "bitcoin-cash": 271.47,
+        "kaspa": 0.04173448
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$85,973.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,744.93 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.54 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$271.47 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-22T16:12:08.066456+00:00",
+      "prices": {
+        "bitcoin": 86253,
+        "ethereum": 2736.96,
+        "ripple": 1.57,
+        "bitcoin-cash": 327.42,
+        "kaspa": 0.04163
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$86,253.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,736.96 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.57 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$327.42 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-22T20:11:23.974721+00:00",
+      "prices": {
+        "bitcoin": 86252,
+        "ethereum": 2750.94,
+        "ripple": 1.59,
+        "bitcoin-cash": 338.55,
+        "kaspa": 0.0418942
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$86,252.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,750.94 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.59 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$338.55 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-23T00:15:39.088954+00:00",
+      "prices": {
+        "bitcoin": 86344,
+        "ethereum": 2757.63,
+        "ripple": 1.58,
+        "bitcoin-cash": 348.65,
+        "kaspa": 0.04141543
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$86,344.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,757.63 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.58 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$348.65 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-23T04:12:21.126288+00:00",
+      "prices": {
+        "bitcoin": 86803,
+        "ethereum": 2774.53,
+        "ripple": 1.62,
+        "bitcoin-cash": 338.45,
+        "kaspa": 0.04233556
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$86,803.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,774.53 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.62 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$338.45 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-23T08:12:37.585953+00:00",
+      "prices": {
+        "bitcoin": 86194,
+        "ethereum": 2744.29,
+        "ripple": 1.61,
+        "bitcoin-cash": 348.24,
+        "kaspa": 0.04157305
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$86,194.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,744.29 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.61 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$348.24 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-23T12:15:14.395892+00:00",
+      "prices": {
+        "bitcoin": 85470,
+        "ethereum": 2722.38,
+        "ripple": 1.56,
+        "bitcoin-cash": 343.51,
+        "kaspa": 0.04135958
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$85,470.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,722.38 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.56 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$343.51 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-23T16:12:29.894129+00:00",
+      "prices": {
+        "bitcoin": 84306,
+        "ethereum": 2663.68,
+        "ripple": 1.52,
+        "bitcoin-cash": 350.29,
+        "kaspa": 0.03878356
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$84,306.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,663.68 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.52 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$350.29 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-23T20:12:49.030701+00:00",
+      "prices": {
+        "bitcoin": 84370,
+        "ethereum": 2674.61,
+        "ripple": 1.49,
+        "bitcoin-cash": 345.33,
+        "kaspa": 0.03879524
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$84,370.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,674.61 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.49 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$345.33 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-24T00:15:47.760053+00:00",
+      "prices": {
+        "bitcoin": 84344,
+        "ethereum": 2685.28,
+        "ripple": 1.5,
+        "bitcoin-cash": 338.67,
+        "kaspa": 0.03818956
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$84,344.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,685.28 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.50 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$338.67 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-24T04:11:49.199155+00:00",
+      "prices": {
+        "bitcoin": 83886,
+        "ethereum": 2673.68,
+        "ripple": 1.49,
+        "bitcoin-cash": 341.48,
+        "kaspa": 0.03880974
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$83,886.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,673.68 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.49 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$341.48 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-24T08:13:21.726527+00:00",
+      "prices": {
+        "bitcoin": 84453,
+        "ethereum": 2689.42,
+        "ripple": 1.5,
+        "bitcoin-cash": 338.97,
+        "kaspa": 0.03944141
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$84,453.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,689.42 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.50 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$338.97 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    },
+    {
+      "at": "2026-09-24T12:14:56.463594+00:00",
+      "prices": {
+        "bitcoin": 83527,
+        "ethereum": 2647.23,
+        "ripple": 1.47,
+        "bitcoin-cash": 335.56,
+        "kaspa": 0.03864366
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$83,527.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,647.23 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.47 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$335.56 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
+    }
+  ],
+  "started_at": "2026-09-18T12:40:21.980492+00:00"
+}
