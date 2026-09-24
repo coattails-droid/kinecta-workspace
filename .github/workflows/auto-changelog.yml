@@ -17,7 +17,7 @@ jobs:
   update-changelog:
     runs-on: ubuntu-latest
     # Avoid infinite loops from our own bot commits
-    if: ${{ !startsWith(github.event.head_commit.message, 'chore: update changelog') }}
+    if: "${{ !startsWith(github.event.head_commit.message, 'chore: update changelog') }}"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
