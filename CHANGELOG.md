@@ -17,6 +17,15 @@ Do not edit entries by hand unless you are correcting a mistake; the next push w
 
 ## Entries
 
+### 2026-09-24 — fix: quote auto-changelog job if-expression for valid YAML
+
+- **SHA:** `6db7198`
+- **When:** 2026-09-24T12:33Z UTC
+- **Author:** coattails-droid
+- **Summary:** fix: quote auto-changelog job if-expression for valid YAML
+- **Files:**
+  - .github/workflows/auto-changelog.yml
+
 ### 2026-09-24 — Workspace setup (seeded)
 
 - **Author:** Kinecta / coattails-droid
