@@ -17,6 +17,15 @@ Do not edit entries by hand unless you are correcting a mistake; the next push w
 
 ## Entries
 
+### 2026-09-24 — fix: treat empty AI_API_BASE/AI_MODEL secrets as unset
+
+- **SHA:** `178ef3e`
+- **When:** 2026-09-24T12:34Z UTC
+- **Author:** coattails-droid
+- **Summary:** fix: treat empty AI_API_BASE/AI_MODEL secrets as unset
+- **Files:**
+  - bot/ai_client.py
+
 ### 2026-09-24 — fix: quote auto-changelog job if-expression for valid YAML
 
 - **SHA:** `6db7198`
