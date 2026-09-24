@@ -17,6 +17,16 @@ Do not edit entries by hand unless you are correcting a mistake; the next push w
 
 ## Entries
 
+### 2026-09-24 — research: generative NFT seed/hash, traits, and display patterns
+
+- **SHA:** `4c78a29`
+- **When:** 2026-09-24T12:43Z UTC
+- **Author:** coattails-droid
+- **Summary:** research: generative NFT seed/hash, traits, and display patterns
+- **Files:**
+  - research/2026-09-24-generative-nft-seed-and-traits.md
+  - research/INDEX.md
+
 ### 2026-09-24 — fix: treat empty AI_API_BASE/AI_MODEL secrets as unset
 
 - **SHA:** `178ef3e`
