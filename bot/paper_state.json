@@ -1623,6 +1623,44 @@
           "reason": "price=$0.04 - no auto-trade in safe mode"
         }
       ]
+    },
+    {
+      "at": "2026-09-25T12:16:43.753690+00:00",
+      "prices": {
+        "bitcoin": 84349,
+        "ethereum": 2711.89,
+        "ripple": 1.6,
+        "bitcoin-cash": 335.65,
+        "kaspa": 0.04196285
+      },
+      "balance": 50.0,
+      "signals": [
+        {
+          "symbol": "bitcoin",
+          "side": "hold",
+          "reason": "price=$84,349.00 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ethereum",
+          "side": "hold",
+          "reason": "price=$2,711.89 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "ripple",
+          "side": "hold",
+          "reason": "price=$1.60 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "bitcoin-cash",
+          "side": "hold",
+          "reason": "price=$335.65 - no auto-trade in safe mode"
+        },
+        {
+          "symbol": "kaspa",
+          "side": "hold",
+          "reason": "price=$0.04 - no auto-trade in safe mode"
+        }
+      ]
     }
   ],
   "started_at": "2026-09-18T12:40:21.980492+00:00"
