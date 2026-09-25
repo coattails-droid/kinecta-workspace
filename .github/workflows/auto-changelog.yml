@@ -5,6 +5,10 @@ on:
     branches:
       - main
       - master
+  schedule:
+    # Catch commits pushed by bots using GITHUB_TOKEN (those don't fire push events)
+    - cron: '41 */6 * * *'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -22,10 +26,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and insert changelog entry
+        if: github.event_name == 'push'
         env:
           COMMIT_SHA: ${{ github.sha }}
           COMMIT_MSG: ${{ github.event.head_commit.message }}
@@ -106,15 +111,26 @@ jobs:
           print("Inserted changelog entry for", Path("/tmp/changelog-entry.md").read_text().splitlines()[0])
           PY
 
+      - name: Append machine-readable ledger entries
+        env:
+          PUSH_BEFORE: ${{ github.event.before }}
+          PUSH_AFTER: ${{ github.sha }}
+          PUSHER: ${{ github.event.pusher.name }}
+        run: python3 bot/change_ledger.py
+
       - name: Commit changelog
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add CHANGELOG.md
+          git add CHANGELOG.md ledger/changes.jsonl
           if git diff --cached --quiet; then
             echo "No changelog changes to commit."
             exit 0
           fi
           git commit -m "chore: update changelog"
-          git push
+          for i in 1 2 3; do
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push && exit 0
+            sleep $((i * 5))
+          done
+          exit 1
