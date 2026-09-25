@@ -20,6 +20,7 @@ on:
         default: '0'
 
 permissions:
+  contents: read   # needed for checkout now that the repo is private
   issues: write
 
 jobs:

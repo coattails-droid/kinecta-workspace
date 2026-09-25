@@ -10,6 +10,7 @@ on:
     types: [completed]
 
 permissions:
+  contents: read   # needed for checkout now that the repo is private
   actions: read   # read run + job logs
   issues: write   # open diagnosis issues
 
