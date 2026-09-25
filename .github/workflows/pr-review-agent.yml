@@ -16,7 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     # Skip bot-only noise if desired; still review human/agent PRs
-    if: ${{ github.actor != 'github-actions[bot]' }}
+    # Off until an AI key exists: set repo variable AI_ENABLED=true (Settings > Secrets and variables > Actions > Variables) to turn on.
+    if: ${{ vars.AI_ENABLED == 'true' && github.actor != 'github-actions[bot]' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4

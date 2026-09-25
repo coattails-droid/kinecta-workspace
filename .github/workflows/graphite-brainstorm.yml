@@ -17,6 +17,8 @@ permissions:
 jobs:
   brainstorm:
     runs-on: ubuntu-latest
+    # Off until an AI key exists: set repo variable AI_ENABLED=true to turn on.
+    if: ${{ vars.AI_ENABLED == 'true' }}
     timeout-minutes: 15
     steps:
       - name: Checkout
