@@ -17,6 +17,16 @@ Do not edit entries by hand unless you are correcting a mistake; the next push w
 
 ## Entries
 
+### 2026-09-25 — fix(ci): grant contents: read so checkout works on private repo
+
+- **SHA:** `b67f4e5`
+- **When:** 2026-09-25T01:20Z UTC
+- **Author:** coattails-droid
+- **Summary:** fix(ci): grant contents: read so checkout works on private repo
+- **Files:**
+  - .github/workflows/failure-detective.yml
+  - .github/workflows/price-sentinel.yml
+
 ### 2026-09-24 — research: generative NFT seed/hash, traits, and display patterns
 
 - **SHA:** `4c78a29`
