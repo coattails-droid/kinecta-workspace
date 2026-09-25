@@ -1,7 +1,7 @@
 name: pr-review-agent
 
 # On PR open/sync, ask an AI model to review the diff and post a COMMENT review.
-# Requires repo secret AI_API_KEY (OpenAI-compatible). Optional: AI_API_BASE, AI_MODEL.
+# Requires repo secret AI_API_KEY (xAI key from console.x.ai; any OpenAI-compatible provider works via AI_API_BASE). Optional: AI_API_BASE, AI_MODEL.
 
 on:
   pull_request:

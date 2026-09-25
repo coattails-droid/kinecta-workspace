@@ -1,7 +1,7 @@
 name: graphite-brainstorm
 
 # Manual creative brainstorms for Seeded Geometries (graphite / art / design ideas).
-# Requires repo secret AI_API_KEY (OpenAI-compatible). Optional: AI_API_BASE, AI_MODEL.
+# Requires repo secret AI_API_KEY (xAI key from console.x.ai; any OpenAI-compatible provider works via AI_API_BASE). Optional: AI_API_BASE, AI_MODEL.
 
 on:
   workflow_dispatch:

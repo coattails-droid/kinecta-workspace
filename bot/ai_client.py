@@ -2,8 +2,8 @@
 
 Expects repo secrets / env:
   AI_API_KEY   (required) — bearer token
-  AI_API_BASE  (optional) — default https://api.openai.com/v1
-  AI_MODEL     (optional) — default gpt-4o-mini
+  AI_API_BASE  (optional) — default https://api.x.ai/v1 (xAI)
+  AI_MODEL     (optional) — default grok-4.7
 
 Works with OpenAI, xAI (https://api.x.ai/v1), and other compatible gateways.
 """
@@ -26,8 +26,8 @@ def chat(messages: list[dict], *, temperature: float = 0.7, max_tokens: int = 20
             "AI_API_KEY is not set. Add it as a repository secret "
             "(Settings → Secrets and variables → Actions), then re-run."
         )
-    base = (os.environ.get("AI_API_BASE") or "https://api.openai.com/v1").rstrip("/")
-    model = os.environ.get("AI_MODEL") or "gpt-4o-mini"
+    base = (os.environ.get("AI_API_BASE") or "https://api.x.ai/v1").rstrip("/")
+    model = os.environ.get("AI_MODEL") or "grok-4.7"
     url = f"{base}/chat/completions"
     body = json.dumps(
         {
