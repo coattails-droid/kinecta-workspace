@@ -17,6 +17,17 @@ Do not edit entries by hand unless you are correcting a mistake; the next push w
 
 ## Entries
 
+### 2026-09-25 — chore(ai): default AI agents to xAI (api.x.ai, grok-4.7)
+
+- **SHA:** `948943d`
+- **When:** 2026-09-25T01:56Z UTC
+- **Author:** coattails-droid
+- **Summary:** chore(ai): default AI agents to xAI (api.x.ai, grok-4.7)
+- **Files:**
+  - .github/workflows/graphite-brainstorm.yml
+  - .github/workflows/pr-review-agent.yml
+  - bot/ai_client.py
+
 ### 2026-09-25 — feat(ledger): machine-readable JSONL change log (ledger/changes.jsonl), backfilled
 
 - **SHA:** `687f9f0`
