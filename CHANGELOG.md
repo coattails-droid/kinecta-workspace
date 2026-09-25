@@ -17,6 +17,16 @@ Do not edit entries by hand unless you are correcting a mistake; the next push w
 
 ## Entries
 
+### 2026-09-25 — chore(ai): pause brainstorm + PR-review agents until AI_ENABLED repo variable is true
+
+- **SHA:** `b5715ae`
+- **When:** 2026-09-25T02:03Z UTC
+- **Author:** coattails-droid
+- **Summary:** chore(ai): pause brainstorm + PR-review agents until AI_ENABLED repo variable is true
+- **Files:**
+  - .github/workflows/graphite-brainstorm.yml
+  - .github/workflows/pr-review-agent.yml
+
 ### 2026-09-25 — chore(ai): default AI agents to xAI (api.x.ai, grok-4.7)
 
 - **SHA:** `948943d`
