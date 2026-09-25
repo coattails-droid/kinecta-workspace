@@ -17,6 +17,18 @@ Do not edit entries by hand unless you are correcting a mistake; the next push w
 
 ## Entries
 
+### 2026-09-25 — feat(ledger): machine-readable JSONL change log (ledger/changes.jsonl), backfilled
+
+- **SHA:** `687f9f0`
+- **When:** 2026-09-25T01:55Z UTC
+- **Author:** coattails-droid
+- **Summary:** feat(ledger): machine-readable JSONL change log (ledger/changes.jsonl), backfilled
+- **Files:**
+  - .github/workflows/auto-changelog.yml
+  - bot/change_ledger.py
+  - ledger/README.md
+  - ledger/changes.jsonl
+
 ### 2026-09-25 — fix(ci): grant contents: read so checkout works on private repo
 
 - **SHA:** `b67f4e5`
