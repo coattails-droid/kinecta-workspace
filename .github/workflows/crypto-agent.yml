@@ -40,8 +40,29 @@ jobs:
           git config user.name "crypto-paper-agent"
           git config user.email "crypto-paper-agent@users.noreply.github.com"
           git add bot/paper_state.json || true
-          git diff --staged --quiet || git commit -m "paper trade log $(date -u +%Y-%m-%dT%H:%MZ)"
-          git push || echo "No push needed or push failed"
+          if git diff --staged --quiet; then
+            echo "No state changes to commit"
+            exit 0
+          fi
+          git commit -m "paper trade log $(date -u +%Y-%m-%dT%H:%MZ)"
+          # main moves often (auto-changelog, dashboard, digests): on a
+          # rejected push, rebase onto origin/main and retry.
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              echo "Pushed paper state on attempt $attempt"
+              exit 0
+            fi
+            echo "Push attempt $attempt rejected"
+            [ "$attempt" -eq 3 ] && break
+            echo "Rebasing onto origin/main and retrying"
+            sleep $((attempt * 5))
+            if ! { git fetch origin main && git rebase origin/main; }; then
+              git rebase --abort 2>/dev/null || true
+              echo "Rebase onto origin/main failed"
+              break
+            fi
+          done
+          echo "::warning title=paper state not pushed::Could not push bot/paper_state.json after retries; this run's state is only in the uploaded artifact."
 
       - name: Upload log artifact
         uses: actions/upload-artifact@v4

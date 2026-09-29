@@ -70,7 +70,12 @@ def decide_actions(markets, open_alerts, threshold):
     by_id = {c["id"]: c for c in markets}
     actions = []
     for cid, coin in by_id.items():
-        chg = coin.get("price_change_percentage_24h") or 0.0
+        chg = coin.get("price_change_percentage_24h")
+        if chg is None:
+            # no 24h change available (e.g. Uphold-only price): don't open,
+            # comment, or close anything for this coin on this run
+            print(f"Skipping {cid}: 24h change unavailable")
+            continue
         issue = open_alerts.get(cid)
         if abs(chg) >= threshold:
             direction = "up" if chg > 0 else "down"

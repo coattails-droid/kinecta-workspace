@@ -1,10 +1,11 @@
 """Shared crypto price fetching with source fallback (stdlib only).
 
-Sources, tried in order per coin:
-  1. Kraken public API          (primary)
-  2. Coinbase Exchange public API (secondary)
-  3. CoinGecko keyless API       (last resort; sends x-cg-demo-api-key if
-                                  COINGECKO_API_KEY is set)
+Sources, tried in order per coin (get_prices):
+  1. Kraken public API            (primary)
+  2. Uphold public ticker         (mid of ask/bid; lists KAS)
+  3. Coinbase Exchange public API (no KAS)
+  4. CoinGecko keyless API        (last resort; sends x-cg-demo-api-key if
+                                   COINGECKO_API_KEY is set)
 
 If a source fails or doesn't list a coin, the next source fills in only the
 coins that are still missing. Each HTTP request is retried once after a short
@@ -18,6 +19,21 @@ files stay unchanged.
 value, so for Kraken the 24h reference price is taken from OHLC interval=5
 (the 5-minute candle covering exactly now-24h). Coinbase uses /stats, whose
 `open` is the rolling-24h open. High/low are rolling 24h on both.
+
+Uphold and 24h change: Uphold's keyless ticker is spot-only, and its
+historical-rates API needs an enterprise bearer token, so there is no free
+24h reference. When PRICE_SNAPSHOT_FILE is set (price-sentinel sets it and
+persists the file between hourly runs with actions/cache), get_markets
+records Uphold mids on every run and derives Uphold's 24h change from the
+snapshot closest to now-24h (accepted within +/-2h, so it's approximate and
+high/low are n/a). get_markets therefore orders sources
+  Kraken -> Coinbase (true rolling 24h) -> Uphold + snapshot -> CoinGecko
+  -> Uphold price-only (price_change_percentage_24h = None)
+The price-only row keeps the coin's price available; price_sentinel skips
+coins whose change is None instead of treating it as 0. With no snapshot
+yet (first ~24h after the cache starts, or cache evicted) that's what KAS
+gets if Kraken is down. Uphold has no free history, so get_daily_history
+does not use it.
 
 Public API:
     get_prices(ids)              -> {id: usd_price}
@@ -40,20 +56,29 @@ RETRY_BACKOFF_S = 2.0
 KRAKEN = "https://api.kraken.com/0/public"
 COINBASE = "https://api.exchange.coinbase.com"
 COINGECKO = "https://api.coingecko.com/api/v3"
+UPHOLD = "https://api.uphold.com/v0"
+
+SNAPSHOT_KEEP_S = 48 * 3600       # prune snapshots older than this
+SNAPSHOT_TOLERANCE_S = 2 * 3600   # accept a reference within now-24h +/- 2h
 
 # CoinGecko id -> metadata. kraken = (request pair, response key);
-# coinbase = product id or None if not listed.
+# coinbase / uphold = pair id, or None if not listed there.
 COINS = {
     "bitcoin": {"symbol": "btc", "name": "Bitcoin",
-                "kraken": ("XBTUSD", "XXBTZUSD"), "coinbase": "BTC-USD"},
+                "kraken": ("XBTUSD", "XXBTZUSD"), "coinbase": "BTC-USD",
+                "uphold": "BTC-USD"},
     "ethereum": {"symbol": "eth", "name": "Ethereum",
-                 "kraken": ("ETHUSD", "XETHZUSD"), "coinbase": "ETH-USD"},
+                 "kraken": ("ETHUSD", "XETHZUSD"), "coinbase": "ETH-USD",
+                 "uphold": "ETH-USD"},
     "ripple": {"symbol": "xrp", "name": "XRP",
-               "kraken": ("XRPUSD", "XXRPZUSD"), "coinbase": "XRP-USD"},
+               "kraken": ("XRPUSD", "XXRPZUSD"), "coinbase": "XRP-USD",
+               "uphold": "XRP-USD"},
     "bitcoin-cash": {"symbol": "bch", "name": "Bitcoin Cash",
-                     "kraken": ("BCHUSD", "BCHUSD"), "coinbase": "BCH-USD"},
+                     "kraken": ("BCHUSD", "BCHUSD"), "coinbase": "BCH-USD",
+                     "uphold": "BCH-USD"},
     "kaspa": {"symbol": "kas", "name": "Kaspa",
-              "kraken": ("KASUSD", "KASUSD"), "coinbase": None},
+              "kraken": ("KASUSD", "KASUSD"), "coinbase": None,
+              "uphold": "KAS-USD"},
 }
 
 # Which source served each coin on the most recent call (for callers/logs).
@@ -242,6 +267,104 @@ def _coinbase_history(cid, days):
     return [(ts * 1000, p) for ts, p in pts]
 
 
+# ---------------------------------------------------------------- Uphold
+
+def _uphold_prices(ids):
+    """{id: mid of ask/bid} from Uphold's keyless ticker."""
+    out = {}
+    for c in ids:
+        pair = COINS.get(c, {}).get("uphold")
+        if not pair:
+            continue
+        try:
+            t = _get_json(f"{UPHOLD}/ticker/{pair}")
+            if t.get("currency") != "USD":
+                raise ValueError(f"unexpected currency {t.get('currency')}")
+            out[c] = (float(t["ask"]) + float(t["bid"])) / 2
+        except Exception as e:
+            _log(f"Uphold ticker failed for {c}: {e}")
+    return out
+
+
+def _snapshot_path():
+    return os.environ.get("PRICE_SNAPSHOT_FILE") or None
+
+
+def _load_snapshots():
+    path = _snapshot_path()
+    if not path or not os.path.exists(path):
+        return {}
+    try:
+        with open(path) as f:
+            data = json.load(f)
+        return data if isinstance(data, dict) else {}
+    except Exception as e:
+        _log(f"ignoring unreadable snapshot file {path}: {e}")
+        return {}
+
+
+def _record_snapshots(source, mids, now):
+    """Append {id: price} readings for `source` and prune old ones."""
+    path = _snapshot_path()
+    if not path or not mids:
+        return
+    data = _load_snapshots()
+    series = data.setdefault(source, {})
+    for c, p in mids.items():
+        pts = [pt for pt in series.get(c, []) if now - pt[0] <= SNAPSHOT_KEEP_S]
+        pts.append([int(now), p])
+        series[c] = pts
+    try:
+        os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+        with open(path, "w") as f:
+            json.dump(data, f)
+    except OSError as e:
+        _log(f"could not write snapshot file {path}: {e}")
+
+
+def _snapshot_ref(source, cid, now):
+    """(price, ts) of the recorded reading closest to now-24h, or None."""
+    target = now - 86400
+    best = None
+    for ts, p in _load_snapshots().get(source, {}).get(cid, []):
+        if abs(ts - target) <= SNAPSHOT_TOLERANCE_S:
+            if best is None or abs(ts - target) < abs(best[1] - target):
+                best = (float(p), ts)
+    return best
+
+
+def _uphold_market_row(cid, last, ref):
+    if ref is not None:
+        return _market_row(cid, last, ref, None, None)
+    row = _market_row(cid, last, last, None, None)
+    row["price_change_24h"] = None
+    row["price_change_percentage_24h"] = None
+    return row
+
+
+def _uphold_markets_factory(mids_now, now, with_ref):
+    def fn(ids):
+        mids = {c: mids_now[c] for c in ids if c in mids_now}
+        todo = [c for c in ids if c not in mids]
+        if todo:
+            mids.update(_uphold_prices(todo))
+        out = {}
+        for c, last in mids.items():
+            if with_ref:
+                ref = _snapshot_ref("uphold", c, now)
+                if ref is None:
+                    _log(f"Uphold has no ~24h-old snapshot for {c}")
+                    continue
+                _log(f"Uphold 24h reference for {c}: snapshot from "
+                     f"{(now - ref[1]) / 3600:.1f}h ago")
+                out[c] = _uphold_market_row(c, last, ref[0])
+            else:
+                _log(f"WARNING: {c} served by Uphold without a 24h change")
+                out[c] = _uphold_market_row(c, last, None)
+        return out
+    return fn
+
+
 # ------------------------------------------------------------- CoinGecko
 
 def _cg_headers():
@@ -329,16 +452,33 @@ def get_prices(ids):
     """{coingecko_id: usd_price} for every id, or raise RuntimeError."""
     ids = _norm_ids(ids)
     return _fill(ids, [("Kraken", _kraken_prices),
+                       ("Uphold", _uphold_prices),
                        ("Coinbase", _coinbase_prices),
                        ("CoinGecko", _coingecko_prices)], "price")
 
 
 def get_markets(ids):
-    """List of CoinGecko coins/markets-shaped dicts, in the requested order."""
+    """List of CoinGecko coins/markets-shaped dicts, in the requested order.
+
+    price_change_percentage_24h may be None only for a coin that nothing but
+    Uphold could price and that has no ~24h-old Uphold snapshot.
+    """
     ids = _norm_ids(ids)
-    rows = _fill(ids, [("Kraken", _kraken_markets),
-                       ("Coinbase", _coinbase_markets),
-                       ("CoinGecko", _coingecko_markets)], "market")
+    now = time.time()
+    # With snapshots enabled, read Uphold every run so there is always a
+    # ~24h-old Uphold reading to compare against (Uphold vs Uphold).
+    uphold_now = _uphold_prices(ids) if _snapshot_path() else {}
+    try:
+        rows = _fill(ids, [
+            ("Kraken", _kraken_markets),
+            ("Coinbase", _coinbase_markets),
+            ("Uphold", _uphold_markets_factory(uphold_now, now, True)),
+            ("CoinGecko", _coingecko_markets),
+            ("Uphold (price only, no 24h change)",
+             _uphold_markets_factory(uphold_now, now, False)),
+        ], "market")
+    finally:
+        _record_snapshots("uphold", uphold_now, now)
     return [rows[c] for c in ids]
 
 

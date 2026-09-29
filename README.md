@@ -19,7 +19,8 @@ If you do trade real money, never trade money you can't afford to lose.
 ## What's included
 
 - `bot/paper_trader.py` - paper trading bot (stdlib only, no API keys needed)
-  - Fetches prices from CoinGecko public API
+  - Fetches prices via `bot/prices.py`: Kraken public API first, then Uphold,
+    Coinbase Exchange, and CoinGecko as fallbacks (no API keys needed)
   - Logs signals and balance to `bot/paper_state.json`
   - Enforces max risk per trade (default 2%)
   - Safe mode: does NOT auto-trade aggressively
@@ -38,7 +39,8 @@ If you do trade real money, never trade money you can't afford to lose.
   - Also watches `price-sentinel`
 
 - `bot/price_sentinel.py` + `.github/workflows/price-sentinel.yml` - price sentinel
-  - Runs hourly; checks 24h moves for BTC, ETH, XRP, BCH, KAS via CoinGecko
+  - Runs hourly; checks 24h moves for BTC, ETH, XRP, BCH, KAS via Kraken
+    (fallbacks: Coinbase, Uphold, CoinGecko; see `bot/prices.py`)
   - Opens a GitHub issue when a coin moves >= 5% (configurable) in 24h,
     comments fresh readings on the open alert, and closes it automatically
     once the move settles

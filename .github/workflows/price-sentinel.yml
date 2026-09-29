@@ -35,11 +35,29 @@ jobs:
         with:
           python-version: '3.11'
 
+      # Rolling Uphold price snapshots (bot/prices.py) so KAS still gets a
+      # 24h change from Uphold if Kraken is down. Each run saves a new cache
+      # entry; restore-keys picks up the most recent one.
+      - name: Restore price snapshots
+        uses: actions/cache/restore@v4
+        with:
+          path: .price-cache
+          key: price-snapshots-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: price-snapshots-
+
       - name: Check prices and manage alerts
         env:
+          PRICE_SNAPSHOT_FILE: .price-cache/snapshots.json
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
           COIN_IDS: 'bitcoin,ethereum,ripple,bitcoin-cash,kaspa'
           ALERT_THRESHOLD_PCT: ${{ github.event.inputs.threshold_pct || '5' }}
           DRY_RUN: ${{ github.event.inputs.dry_run || '0' }}
         run: python bot/price_sentinel.py
+
+      - name: Save price snapshots
+        if: always() && hashFiles('.price-cache/snapshots.json') != ''
+        uses: actions/cache/save@v4
+        with:
+          path: .price-cache
+          key: price-snapshots-${{ github.run_id }}-${{ github.run_attempt }}
