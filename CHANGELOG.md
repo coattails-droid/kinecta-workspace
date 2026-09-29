@@ -17,6 +17,19 @@ Do not edit entries by hand unless you are correcting a mistake; the next push w
 
 ## Entries
 
+### 2026-09-29 — Add Uphold price source; retry paper-state push on rejected main
+
+- **SHA:** `d6855ec`
+- **When:** 2026-09-29T12:42Z UTC
+- **Author:** coattails-droid
+- **Summary:** Add Uphold price source; retry paper-state push on rejected main
+- **Files:**
+  - .github/workflows/crypto-agent.yml
+  - .github/workflows/price-sentinel.yml
+  - README.md
+  - bot/price_sentinel.py
+  - bot/prices.py
+
 ### 2026-09-29 — Add Kraken/Coinbase price fallbacks for crypto bots
 
 - **SHA:** `db4abf4`
