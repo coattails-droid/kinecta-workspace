@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Price sentinel.
 
-Runs on a schedule. Fetches 24h price changes for tracked coins from
-CoinGecko and manages GitHub issues as alerts:
+Runs on a schedule. Fetches 24h price changes for tracked coins (Kraken,
+falling back to Coinbase, then CoinGecko; see prices.py) and manages
+GitHub issues as alerts:
 
   * coin moves >= ALERT_THRESHOLD_PCT (abs, 24h) -> open an issue (or comment
     on the existing open one with a fresh reading)
@@ -23,8 +24,9 @@ import json
 import os
 import re
 import sys
-import urllib.parse
 import urllib.request
+
+import prices
 
 API = "https://api.github.com"
 MARKER_RE = re.compile(r"<!-- sentinel-coin: ([a-z0-9-]+) -->")
@@ -48,12 +50,8 @@ def api(path, token, method="GET", data=None):
 
 
 def fetch_markets(coin_ids):
-    ids = urllib.parse.quote(coin_ids)
-    url = (f"https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd"
-           f"&ids={ids}&price_change_percentage=24h")
-    req = urllib.request.Request(url, headers={"User-Agent": "price-sentinel"})
-    with urllib.request.urlopen(req, timeout=60) as r:
-        return json.loads(r.read().decode())
+    # Kraken -> Coinbase -> CoinGecko fallback, CoinGecko coins/markets shape
+    return prices.get_markets(coin_ids)
 
 
 def fmt_usd(x):
@@ -129,10 +127,10 @@ def main():
     try:
         markets = fetch_markets(coin_ids)
     except Exception as e:
-        print(f"CoinGecko fetch failed: {e}", file=sys.stderr)
+        print(f"Price fetch failed: {e}", file=sys.stderr)
         return 1
     if not isinstance(markets, list) or not markets:
-        print("CoinGecko returned no market data", file=sys.stderr)
+        print("No market data returned", file=sys.stderr)
         return 1
 
     issues = api(f"/repos/{repo}/issues?state=open&per_page=100", token)

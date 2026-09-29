@@ -24,8 +24,9 @@ import json
 import os
 import sys
 import time
-import urllib.request
 from datetime import datetime, timezone
+
+import prices
 
 COINS = ["bitcoin", "ethereum", "ripple", "bitcoin-cash", "kaspa"]
 STARTING_CASH = 50.0
@@ -37,21 +38,34 @@ POSITION_PCT = float(os.getenv("POSITION_PCT", "20"))       # cash per trade %
 
 
 def fetch_history(days):
-    series = {}
+    """Daily closes per coin via prices.py (Kraken -> Coinbase -> CoinGecko).
+
+    Returns (series, sources) where sources maps coin -> serving source.
+    """
+    series, sources = {}, {}
     for i, cid in enumerate(COINS):
-        url = (f"https://api.coingecko.com/api/v3/coins/{cid}/market_chart"
-               f"?vs_currency=usd&days={days}")
-        req = urllib.request.Request(url, headers={"User-Agent": "muse-backtest/1.0"})
-        with urllib.request.urlopen(req, timeout=30) as r:
-            data = json.loads(r.read().decode())
-        pts = data["prices"]
+        pts = prices.get_daily_history(cid, days)
+        sources[cid] = prices.last_sources.get(cid, "unknown")
         series[cid] = [
             (datetime.fromtimestamp(ts / 1000, timezone.utc).strftime("%Y-%m-%d"), p)
             for ts, p in pts
         ]
         if i < len(COINS) - 1:
-            time.sleep(12)
-    return series
+            time.sleep(1)  # be polite to the public APIs
+    return series, sources
+
+
+def describe_sources(sources):
+    """e.g. "Kraken OHLC daily closes, vs USD" or a per-coin breakdown."""
+    label = {"Kraken": "Kraken OHLC daily closes",
+             "Coinbase": "Coinbase Exchange daily candles",
+             "CoinGecko": "CoinGecko market_chart, daily"}
+    used = sorted(set(sources.values()))
+    if len(used) == 1:
+        return f"{label.get(used[0], used[0])}, vs USD"
+    parts = [f"{label.get(src, src)} ({', '.join(c for c in COINS if sources[c] == src)})"
+             for src in used]
+    return "; ".join(parts) + ", vs USD"
 
 
 def run_backtest(series):
@@ -169,8 +183,8 @@ def main():
                   for c in COINS}
         source = f"local file {args.prices_file} (CoinGecko)"
     else:
-        series = fetch_history(args.days)
-        source = "CoinGecko market_chart, daily, vs USD"
+        series, sources = fetch_history(args.days)
+        source = describe_sources(sources)
 
     # sanity: all series same length
     n = len(series[COINS[0]])

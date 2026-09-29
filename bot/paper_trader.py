@@ -12,8 +12,9 @@ import json
 import os
 import sys
 import time
-import urllib.request
 from datetime import datetime, timezone
+
+import prices as price_feed  # bot/prices.py
 
 # Config
 STARTING_BALANCE = float(os.getenv("STARTING_BALANCE", "50"))
@@ -21,17 +22,10 @@ MAX_RISK_PER_TRADE_PCT = float(os.getenv("MAX_RISK_PER_TRADE_PCT", "2"))  # risk
 SYMBOLS = os.getenv("SYMBOLS", "bitcoin,ethereum,ripple,bitcoin-cash,kaspa").split(",")
 STATE_FILE = os.getenv("STATE_FILE", "bot/paper_state.json")
 
-COINGECKO_URL = "https://api.coingecko.com/api/v3/simple/price?ids={ids}&vs_currencies=usd"
-
 
 def fetch_prices():
-    ids = ",".join(s.strip() for s in SYMBOLS if s.strip())
-    url = COINGECKO_URL.format(ids=ids)
-    req = urllib.request.Request(url, headers={"User-Agent": "crypto-paper-bot/1.0"})
-    with urllib.request.urlopen(req, timeout=15) as resp:
-        data = json.loads(resp.read().decode())
-    # normalize to {symbol: price}
-    return {k: v["usd"] for k, v in data.items() if "usd" in v}
+    # Kraken -> Coinbase -> CoinGecko fallback; returns {coingecko_id: usd}
+    return price_feed.get_prices(SYMBOLS)
 
 
 def load_state():
