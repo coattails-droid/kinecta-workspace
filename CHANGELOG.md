@@ -17,6 +17,18 @@ Do not edit entries by hand unless you are correcting a mistake; the next push w
 
 ## Entries
 
+### 2026-09-29 — Add Kraken/Coinbase price fallbacks for crypto bots
+
+- **SHA:** `db4abf4`
+- **When:** 2026-09-29T12:32Z UTC
+- **Author:** coattails-droid
+- **Summary:** Add Kraken/Coinbase price fallbacks for crypto bots
+- **Files:**
+  - bot/backtest.py
+  - bot/paper_trader.py
+  - bot/price_sentinel.py
+  - bot/prices.py
+
 ### 2026-09-25 — chore(ai): pause brainstorm + PR-review agents until AI_ENABLED repo variable is true
 
 - **SHA:** `b5715ae`
