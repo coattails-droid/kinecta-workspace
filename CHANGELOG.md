@@ -17,6 +17,15 @@ Do not edit entries by hand unless you are correcting a mistake; the next push w
 
 ## Entries
 
+### 2026-10-21 — Retire xAI agent workflow: gated off and never ran; function taken over by Muse to save API credits
+
+- **SHA:** `3262cad`
+- **When:** 2026-10-21T20:03Z UTC
+- **Author:** coattails
+- **Summary:** Retire xAI agent workflow: gated off and never ran; function taken over by Muse to save API credits
+- **Files:**
+  - .github/workflows/pr-review-agent.yml
+
 ### 2026-09-29 — Add Uphold price source; retry paper-state push on rejected main
 
 - **SHA:** `d6855ec`
