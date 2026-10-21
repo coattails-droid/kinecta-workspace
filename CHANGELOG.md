@@ -17,6 +17,15 @@ Do not edit entries by hand unless you are correcting a mistake; the next push w
 
 ## Entries
 
+### 2026-10-21 — Retire duplicate digest: canonical digests live in Work-with-Muse (daily-digests)
+
+- **SHA:** `c658857`
+- **When:** 2026-10-21T21:42Z UTC
+- **Author:** coattails
+- **Summary:** Retire duplicate digest: canonical digests live in Work-with-Muse (daily-digests)
+- **Files:**
+  - .github/workflows/news-digest.yml
+
 ### 2026-10-21 — Retire xAI agent workflow: gated off and never ran; function taken over by Muse to save API credits
 
 - **SHA:** `3262cad`
